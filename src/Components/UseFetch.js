@@ -1,17 +1,17 @@
-const GetDate = () => 0
-const currentDate = new Date();
-const dayName = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const monthName = ["January", "February", "March", "April", "May", "June", "July", "August","September", "October","November", "December"];
-const day = dayName[currentDate.getDay];
-const date = currentDate.getDate();
-const month = monthName[currentDate-getMonth()];
-const year = currentDate.getFullYear();
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-return (
-<div className="date">
-        <h1>{day}</h1>
-        <h4> {month} {date}, {year}</h4>
-</div>
-);
+const UseFetch = (url) => {
+    const [data, setTasks] = useState(null);
 
-export default GetDate;
+    useEffect (() => {
+        axios.get(url)
+        .then(res => (setTasks(res.data)))
+
+        .catch(err => console.log(err))
+    }, [url]);
+
+    return {data};
+}
+
+export default UseFetch;
