@@ -9,6 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <GetDate/>
+        <Form/>
         <div className="Content">
           <Switch>
             <Route exact path="/">
