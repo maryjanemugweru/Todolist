@@ -1,6 +1,7 @@
 import './App.css';
 import GetDate from './components/Date';
 import MyTask from './components/Home';
+import Form from './components/Form';
 import TaskDetails from './components/TaskDetails';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom';
 
